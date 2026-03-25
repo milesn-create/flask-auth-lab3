@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Главная</h1>
+
+<p>Количество посещений:</p>
+<div class="badge">{{ visits }}</div>
+
+{% if current_user.is_authenticated %}
+    <p style="margin-top:20px;">Вы вошли как <b>{{ current_user.id }}</b></p>
+{% endif %}
+
+{% endblock %}
