@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
@@ -61,4 +62,4 @@ def secret():
     return render_template('secret.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
